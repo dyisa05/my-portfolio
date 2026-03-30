@@ -1,0 +1,29 @@
+{
+  "personal": {
+    "name": "Daniel Jinjinsoko Yisa",
+    "title": "Junior Cybersecurity Analyst, Network Security Engineer ",
+    "bio": "A cybersecurity graduate with a strong foundation in network security, cryptography, and threat detection. Experienced in configuring networks, analyzing security risks, and implementing secure systems through academic projects and practical training. Passionate about protecting digital systems and continuously developing skills in cybersecurity and emerging technologies.",
+    "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "dyisa88@gamil.com",
+    "phone": "08076207403",
+    "resumeLink": "https://docs.google.com/document/d/1ENx6GDpaA3_UwOJkz08t_h7aw076X7pg/edit?usp=drive_link&ouid=108821938161870035480&rtpof=true&sd=true",
+    "skills": "Python, C++, Nmap, JavaScript, Coder, Network Security",
+    "certificates": "~ Ethical Hacker Certificate – Bingham University Academy (Cisco Networking Academy), Aug 2025\t\t\t\t\t\t\t\t\t\t\t\t \n~ Successfully Completing Introduction To Cybersecurity Offered By Networking Academy Through The Cisco Networking Academy Program. (Mar 2026)",
+    "showAvatar": "no"
+  },
+  "social": {
+    "github": "https://github.com/yourusername",
+    "linkedin": "linkedin.com/in/daniel-yisa-0083673a7",
+    "twitter": "https://twitter.com/yourusername"
+  },
+  "projects": [
+    {
+      "id": "1774888993459",
+      "title": "IoT_Security_Framework",
+      "description": "",
+      "image": "",
+      "demoLink": "",
+      "sourceLink": "https://colab.research.google.com/drive/1KcKj4uzNx8MHuOIod1xT7IPXMKm_Nx4t?usp=sharing"
+    }
+  ]
+}

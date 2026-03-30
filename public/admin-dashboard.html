@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .admin-container {
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 20px;
+    }
+    .section {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .section h3 {
+      margin-bottom: 1rem;
+      color: #2563eb;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .delete-btn {
+      background: #dc2626;
+      margin-left: 0.5rem;
+    }
+    .project-item {
+      border: 1px solid #e5e7eb;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+    .logout {
+      float: right;
+      background: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <button class="logout" id="logoutBtn">Logout</button>
+    <h1>Admin Dashboard</h1>
+
+    <div class="section">
+      <h3>Personal Information</h3>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" id="name">
+      </div>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" id="title">
+      </div>
+      <div class="form-group">
+        <label>Bio</label>
+        <textarea id="bio" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Avatar URL</label>
+        <input type="text" id="avatar">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="email">
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="text" id="phone">
+      </div>
+      <div class="form-group">
+        <label>Skills (separate with commas)</label>
+        <textarea id="skills" rows="3" placeholder="Python, C++, Nmap, JavaScript"></textarea>
+      </div>
+      <div class="form-group">
+        <label>CV/Resume Link (Google Drive or direct link)</label>
+        <input type="text" id="resumeLink" placeholder="https://drive.google.com/your-cv.pdf">
+      </div>
+      <div class="form-group">
+        <label>Certificates (one per line, format: Name - https://link.com)</label>
+        <textarea id="certificates" rows="4" placeholder="Python Certificate - https://example.com&#10;C++ Certificate - https://example.com"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Show Profile Picture?</label>
+        <select id="showAvatar">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <button id="savePersonal">Save Personal</button>
+    </div>
+
+    <div class="section">
+      <h3>Social Links</h3>
+      <div class="form-group">
+        <label>GitHub</label>
+        <input type="text" id="github">
+      </div>
+      <div class="form-group">
+        <label>LinkedIn</label>
+        <input type="text" id="linkedin">
+      </div>
+      <div class="form-group">
+        <label>Twitter</label>
+        <input type="text" id="twitter">
+      </div>
+      <button id="saveSocial">Save Social</button>
+    </div>
+
+    <div class="section">
+      <h3>Projects</h3>
+      <div id="projects-list"></div>
+      <h4>Add New Project</h4>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" id="newTitle">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="newDesc" rows="2"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Image URL</label>
+        <input type="text" id="newImage">
+      </div>
+      <div class="form-group">
+        <label>Demo Link</label>
+        <input type="text" id="newDemo">
+      </div>
+      <div class="form-group">
+        <label>Source Link</label>
+        <input type="text" id="newSource">
+      </div>
+      <button id="addProject">Add Project</button>
+    </div>
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+</html>
