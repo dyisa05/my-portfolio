@@ -5,7 +5,7 @@ async function loadPortfolio() {
     const res = await fetch(API_URL);
     const data = await res.json();
 
-    // Handle profile picture (show/hide)
+    // Handle profile picture
     const avatarImg = document.getElementById('avatar-img');
     if (data.personal.showAvatar === 'no') {
       avatarImg.style.display = 'none';
@@ -30,19 +30,27 @@ async function loadPortfolio() {
       skillsDiv.innerHTML = '<p>No skills added yet</p>';
     }
 
-    // Certificates
+    // Certificates - SHOW IMAGES DIRECTLY
     const certsDiv = document.getElementById('certificates-list');
-    if (data.personal.certificates) {
-      const certs = data.personal.certificates.split('\n');
-      certsDiv.innerHTML = certs.map(cert => {
-        const parts = cert.split(' - ');
-        if (parts.length > 1 && parts[1]) {
-          return `<div class="certificate-item">📜 <a href="${parts[1]}" target="_blank">${parts[0]}</a></div>`;
-        }
-        return `<div class="certificate-item">📜 ${cert}</div>`;
+    if (data.personal.certificates && data.personal.certificates.length > 0) {
+      certsDiv.innerHTML = data.personal.certificates.map(cert => {
+        const parts = cert.split('|');
+        const title = parts[0] || 'Certificate';
+        const imageUrl = parts[1] || '';
+        const description = parts[2] || '';
+        
+        return `
+          <div class="certificate-card">
+            ${imageUrl ? `<img src="${imageUrl}" class="certificate-image" alt="${title}" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">` : '<div class="certificate-image-placeholder">📜 No Image</div>'}
+            <div class="certificate-info">
+              <h4>${title}</h4>
+              ${description ? `<p>${description}</p>` : ''}
+            </div>
+          </div>
+        `;
       }).join('');
     } else {
-      certsDiv.innerHTML = '<p>No certificates added yet</p>';
+      certsDiv.innerHTML = '<p>No certificates added yet. Add them in the admin panel!</p>';
     }
 
     // Resume link

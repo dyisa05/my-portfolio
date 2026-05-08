@@ -8,7 +8,11 @@
     "phone": "08076207403",
     "resumeLink": "https://docs.google.com/document/d/1ENx6GDpaA3_UwOJkz08t_h7aw076X7pg/edit?usp=drive_link&ouid=108821938161870035480&rtpof=true&sd=true",
     "skills": "Python, C++, Nmap, JavaScript, Coder, Network Security",
-    "certificates": "~ Ethical Hacker Certificate – Bingham University Academy (Cisco Networking Academy), Aug 2025\t\t\t\t\t\t\t\t\t\t\t\t \n~ Successfully Completing Introduction To Cybersecurity Offered By Networking Academy Through The Cisco Networking Academy Program. (Mar 2026)",
+    "certificates": [
+      "Ethical Hacking|https://i.imgur.com/x0ARRTV.png|Ethical Hacking certificate",
+      "offered by BINGHAM UNIVERSITY ACADEMY",
+      "through the Cisco Networking Academy program"
+    ],
     "showAvatar": "no"
   },
   "social": {

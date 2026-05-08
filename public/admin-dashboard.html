@@ -58,6 +58,10 @@
       float: right;
       background: #6b7280;
     }
+    small {
+      color: #666;
+      font-size: 0.8rem;
+    }
   </style>
 </head>
 <body>
@@ -100,8 +104,9 @@
         <input type="text" id="resumeLink" placeholder="https://drive.google.com/your-cv.pdf">
       </div>
       <div class="form-group">
-        <label>Certificates (one per line, format: Name - https://link.com)</label>
-        <textarea id="certificates" rows="4" placeholder="Python Certificate - https://example.com&#10;C++ Certificate - https://example.com"></textarea>
+        <label>Certificates (with images that SHOW on the page)</label>
+        <textarea id="certificates" rows="6" placeholder="Python Certificate|https://i.imgur.com/your-image.jpg|Earned in 2024 from Google&#10;C++ Certificate|https://i.imgur.com/another.jpg|Advanced programming certification&#10;Nmap Security|https://i.imgur.com/nmap.jpg|Network scanning expert"></textarea>
+        <small>📌 Format: Title|Image URL|Description (use | to separate)<br>🔗 Upload images to Imgur.com first, then paste the direct image URL<br>🖼️ Images will SHOW directly on your portfolio page</small>
       </div>
       <div class="form-group">
         <label>Show Profile Picture?</label>
