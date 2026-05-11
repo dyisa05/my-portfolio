@@ -18,33 +18,29 @@ app.use(express.static('public'));
 
 function readData() {
   try {
-    return JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+    const data = fs.readFileSync(DATA_FILE, 'utf8');
+    return JSON.parse(data);
   } catch (err) {
+    // Default data - only used if file doesn't exist at all
     const defaultData = {
       personal: {
         name: "Your Name",
         title: "Web Developer",
         bio: "I build awesome websites.",
-        avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+        avatar: "",
         email: "you@example.com",
         phone: "+1 (555) 123-4567",
-        resumeLink: "#"
+        resumeLink: "",
+        skills: "",
+        certificates: [],
+        showAvatar: "no"
       },
       social: {
-        github: "https://github.com",
-        linkedin: "https://linkedin.com",
-        twitter: "https://twitter.com"
+        github: "",
+        linkedin: "",
+        twitter: ""
       },
-      projects: [
-        {
-          id: "1",
-          title: "My Project",
-          description: "Description here",
-          image: "https://via.placeholder.com/400x250",
-          demoLink: "#",
-          sourceLink: "#"
-        }
-      ]
+      projects: []
     };
     fs.writeFileSync(DATA_FILE, JSON.stringify(defaultData, null, 2));
     return defaultData;
@@ -91,16 +87,18 @@ app.get('/api/admin/data', authenticateToken, (req, res) => {
 
 app.put('/api/admin/personal', authenticateToken, (req, res) => {
   const data = readData();
+  // Merge new personal data with existing, preserving all fields
   data.personal = { ...data.personal, ...req.body };
   writeData(data);
-  res.json({ success: true });
+  res.json({ success: true, personal: data.personal });
 });
 
 app.put('/api/admin/social', authenticateToken, (req, res) => {
   const data = readData();
+  // Merge new social links with existing
   data.social = { ...data.social, ...req.body };
   writeData(data);
-  res.json({ success: true });
+  res.json({ success: true, social: data.social });
 });
 
 app.post('/api/admin/projects', authenticateToken, (req, res) => {
